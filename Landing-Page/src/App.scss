@@ -1,0 +1,147 @@
+/* Importación de fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Alata:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+
+/* Variables de colores */
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$dark-gray: hsl(0, 0%, 55%);
+$very-dark-gray: hsl(0, 0%, 41%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//section header
+.background-container {
+  background-image: url("./assets/desktop/image-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+}
+
+.header-title {
+  font-family: "Alata", sans-serif;
+  padding-left: 100px;
+}
+
+.header-nav {
+  display: flex;
+  list-style: none;
+  padding-right: 90px;
+  gap: 20px;
+  font-family: "Alata", sans-serif;
+  font-weight: 400;
+
+  li {
+    position: relative;
+
+    a {
+      text-decoration: none;
+      color: $white;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $dark-gray;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: $white;
+        transition: width 0.3s;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.header-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+//section main
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 60vh;
+  padding-left: 160px;
+}
+
+.main-content {
+  border: 2px solid #ccc;
+  padding: 20px;
+  width: 50%;
+
+  h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    font-size: 60px;
+  }
+}
+
+//section vr
+.section-vr {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 150px;
+  background-color: $white;
+
+  &__image {
+    flex: 1;
+    position: relative;
+    img {
+      width: 75%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+.section-vr__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: $white;
+  padding: 100px;
+  
+  h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: $black;
+  }
+
+  p {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $black;
+  }
+}
