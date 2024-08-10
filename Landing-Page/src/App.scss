@@ -90,13 +90,13 @@ $very-dark-gray: hsl(0, 0%, 41%);
 
 .main-content {
   border: 2px solid #ccc;
-  padding: 20px;
+  padding: 25px;
   width: 50%;
 
   h2 {
     font-family: "Josefin Sans", sans-serif;
     font-weight: 300;
-    font-size: 60px;
+    font-size: 80px;
   }
 }
 
@@ -192,22 +192,33 @@ $very-dark-gray: hsl(0, 0%, 41%);
 .creation-item {
   display: flex;
   position: relative;
+  overflow: hidden;
 
   .creation-img {
     width: 100%;
     margin: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    &:hover {
+      opacity: 0.3;
+    }
+    &:hover ~ .creation-title {
+      color: $black;
+    }
   }
-  .creation-title {
-    position: absolute;
-    bottom: 5%;
-    left: 10%;
-    font-size: 2rem;
-    color: $white;
-    line-height: 1.2;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    text-align: left;
-  }
+}
+
+.creation-title {
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  font-size: 2rem;
+  color: $white;
+  line-height: 1.2;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  text-align: left;
+  transition: color 0.3s ease;
 }
 
 .footer {
