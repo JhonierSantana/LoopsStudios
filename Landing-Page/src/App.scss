@@ -8,6 +8,21 @@ $black: hsl(0, 0%, 0%);
 $dark-gray: hsl(0, 0%, 55%);
 $very-dark-gray: hsl(0, 0%, 41%);
 
+@mixin fontFamily-Alata {
+  font-family: "Alata", sans-serif;
+  font-weight: 400;
+}
+
+@mixin fontFamily-Josefin {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+}
+
+@mixin displayFlex-beetwen {
+  display: flex;
+  justify-content: space-between;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,8 +39,7 @@ $very-dark-gray: hsl(0, 0%, 41%);
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
+  @include displayFlex-beetwen;
   align-items: flex-end;
   padding: 50px 0 50px 0;
   width: 80%;
@@ -33,16 +47,14 @@ $very-dark-gray: hsl(0, 0%, 41%);
 }
 
 .header-title {
-  font-family: "Alata", sans-serif;
-  font-weight: 400;
+  @include fontFamily-Alata;
 }
 
 .header-nav {
   display: flex;
   list-style: none;
   gap: 20px;
-  font-family: "Alata", sans-serif;
-  font-weight: 400;
+  @include fontFamily-Alata;
 
   li {
     position: relative;
@@ -94,17 +106,15 @@ $very-dark-gray: hsl(0, 0%, 41%);
   width: 50%;
 
   h2 {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
+    @include fontFamily-Josefin;
     font-size: 80px;
   }
 }
 
 .section-vr {
+  @include displayFlex-beetwen;
   position: relative;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 150px 0 150px 0;
   background-color: $white;
   width: 80%;
@@ -128,16 +138,14 @@ $very-dark-gray: hsl(0, 0%, 41%);
   padding: 94px 0 0 100px;
 
   h2 {
-    font-family: "Josefin Sans", sans-serif;
+    @include fontFamily-Josefin;
     font-size: 48px;
-    font-weight: 300;
     margin-bottom: 2rem;
     color: $black;
   }
 
   p {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
+    @include fontFamily-Josefin;
     font-size: 1rem;
     line-height: 1.5;
     color: $black;
@@ -152,15 +160,13 @@ $very-dark-gray: hsl(0, 0%, 41%);
   margin-bottom: 100px;
 
   .our-Title {
-    display: flex;
+    @include displayFlex-beetwen;
     align-items: center;
-    justify-content: space-between;
     margin-bottom: 50px;
   }
   h2 {
-    font-family: "Josefin Sans", sans-serif;
+    @include fontFamily-Josefin;
     font-size: 30px;
-    font-weight: 300;
   }
 
   button {
@@ -170,8 +176,7 @@ $very-dark-gray: hsl(0, 0%, 41%);
     outline: none;
     cursor: pointer;
     border: 1px solid $black;
-    font-family: "Alata", sans-serif;
-    font-weight: 400;
+    @include fontFamily-Alata;
     font-size: 13px;
     &:hover {
       background-color: $black;
@@ -215,27 +220,24 @@ $very-dark-gray: hsl(0, 0%, 41%);
   font-size: 2rem;
   color: $white;
   line-height: 1.2;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
+  @include fontFamily-Josefin;
   text-align: left;
   transition: color 0.3s ease;
 }
 
 .footer {
-  color: white;
+  color: $white;
   background-color: $black;
   height: 200px;
   .logo-and-socials {
-    display: flex;
+    @include displayFlex-beetwen;
     width: 80%;
     margin: auto;
     padding: 30px 0;
-    justify-content: space-between;
     align-items: flex-end;
   }
   .logo h1 {
-    font-family: "Alata", sans-serif;
-    font-weight: 400;
+    @include fontFamily-Alata();
   }
   .social-icons {
     display: flex;
@@ -243,11 +245,10 @@ $very-dark-gray: hsl(0, 0%, 41%);
     align-items: center;
   }
   .nav-and-bottom {
-    display: flex;
+    @include displayFlex-beetwen;
     width: 80%;
     margin: auto;
     padding: 10px 0;
-    justify-content: space-between;
   }
   .footer-nav {
     ul {
@@ -258,8 +259,7 @@ $very-dark-gray: hsl(0, 0%, 41%);
         color: white;
         text-decoration: none;
         font-size: 1rem;
-        font-family: "Josefin Sans", sans-serif;
-        font-weight: 300;
+        @include fontFamily-Josefin;
       }
     }
   }
