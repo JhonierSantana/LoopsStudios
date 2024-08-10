@@ -1,4 +1,4 @@
-import React from "react";
+import navLinks from "./navLinks";
 
 const Header = () => {
   return (
@@ -7,21 +7,11 @@ const Header = () => {
       <nav className="header-nav">
         <div className="header-links">
           <ul>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Careers</a>
-            </li>
-            <li>
-              <a href="#">Events</a>
-            </li>
-            <li>
-              <a href="#">Products</a>
-            </li>
-            <li>
-              <a href="#">Support</a>
-            </li>
+            {navLinks.map((link, index) => (
+              <li key={index}>
+                <a href="#">{link}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>

@@ -14,31 +14,32 @@ $very-dark-gray: hsl(0, 0%, 41%);
   box-sizing: border-box;
 }
 
-//section header
-.background-container {
+.Header-Main-container {
   background-image: url("./assets/desktop/image-hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
+  color: $white;
+  height: 80vh;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 60px;
+  align-items: flex-end;
+  padding: 50px 0 50px 0;
+  width: 80%;
+  margin: auto;
 }
 
 .header-title {
   font-family: "Alata", sans-serif;
-  padding-left: 100px;
+  font-weight: 400;
 }
 
 .header-nav {
   display: flex;
   list-style: none;
-  padding-right: 90px;
   gap: 20px;
   font-family: "Alata", sans-serif;
   font-weight: 400;
@@ -50,10 +51,6 @@ $very-dark-gray: hsl(0, 0%, 41%);
       text-decoration: none;
       color: $white;
       transition: color 0.3s;
-
-      &:hover {
-        color: $dark-gray;
-      }
 
       &::after {
         content: "";
@@ -82,13 +79,13 @@ $very-dark-gray: hsl(0, 0%, 41%);
   gap: 30px;
 }
 
-//section main
 .main {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   min-height: 60vh;
-  padding-left: 160px;
+  width: 80%;
+  margin: auto;
 }
 
 .main-content {
@@ -103,21 +100,21 @@ $very-dark-gray: hsl(0, 0%, 41%);
   }
 }
 
-//section vr
 .section-vr {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 150px;
+  padding: 150px 0 150px 0;
   background-color: $white;
+  width: 80%;
+  margin: auto;
 
   &__image {
     flex: 1;
     position: relative;
     img {
-      width: 75%;
-      height: auto;
+      width: 60%;
       display: block;
     }
   }
@@ -125,23 +122,137 @@ $very-dark-gray: hsl(0, 0%, 41%);
 
 .section-vr__content {
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
   background-color: $white;
-  padding: 100px;
-  
+  padding: 94px 0 0 100px;
+
   h2 {
     font-family: "Josefin Sans", sans-serif;
     font-size: 48px;
-    font-weight: 400;
+    font-weight: 300;
     margin-bottom: 2rem;
     color: $black;
   }
 
   p {
     font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
     font-size: 1rem;
     line-height: 1.5;
     color: $black;
+    max-width: 445px;
+  }
+}
+
+.our-creations {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 100px;
+
+  .our-Title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  button {
+    width: 90px;
+    height: 30px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid $black;
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+
+  .creations-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    box-sizing: border-box;
+    width: 100%;
+    color: $black;
+  }
+}
+
+.creation-item {
+  display: flex;
+  position: relative;
+
+  .creation-img {
+    width: 100%;
+    margin: 0;
+  }
+  .creation-title {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    font-size: 2rem;
+    color: $white;
+    line-height: 1.2;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    text-align: left;
+  }
+}
+
+.footer {
+  color: white;
+  background-color: $black;
+  height: 200px;
+  .logo-and-socials {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    padding: 30px 0;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .logo h1 {
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+  }
+  .social-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .nav-and-bottom {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    padding: 10px 0;
+    justify-content: space-between;
+  }
+  .footer-nav {
+    ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 300;
+      }
+    }
+  }
+  .footer-bottom {
+    color: $dark-gray;
   }
 }
