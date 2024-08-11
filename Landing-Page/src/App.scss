@@ -208,31 +208,32 @@ $very-dark-gray: hsl(0, 0%, 41%);
 .creation-item {
   position: relative;
   overflow: hidden;
+  transition: opacity 0.3s ease;
 
   .creation-img {
     width: 100%;
     margin: 0;
     cursor: pointer;
-    transition: opacity 0.3s ease;
     &:hover {
       opacity: 0.3;
+      filter: blur(1px);
     }
-    &:hover ~ .creation-title {
-      color: $black;
-    }
+  }
+  .creation-title {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    font-size: 2rem;
+    color: $white;
+    line-height: 1.2;
+    @include fontFamily-Josefin;
+    text-align: left;
+    transition: color 0.3s ease;
   }
 }
 
-.creation-title {
-  position: absolute;
-  bottom: 5%;
-  left: 10%;
-  font-size: 2rem;
-  color: $white;
-  line-height: 1.2;
-  @include fontFamily-Josefin;
-  text-align: left;
-  transition: color 0.3s ease;
+.creation-item:hover .creation-title {
+  color: $black;
 }
 
 .footer {
