@@ -91,6 +91,18 @@ $very-dark-gray: hsl(0, 0%, 41%);
   gap: 30px;
 }
 
+.header__menu {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  display: none;
+}
+
+.menu-container {
+  position: relative;
+  display: none;
+}
+
 .main {
   display: flex;
   align-items: center;
@@ -115,8 +127,7 @@ $very-dark-gray: hsl(0, 0%, 41%);
   @include displayFlex-beetwen;
   position: relative;
   align-items: center;
-  padding: 150px 0 150px 0;
-  background-color: $white;
+  padding: 150px 0;
   width: 80%;
   margin: auto;
 
@@ -132,10 +143,10 @@ $very-dark-gray: hsl(0, 0%, 41%);
 
 .section-vr__content {
   position: absolute;
-  top: 53%;
+  top: 50%;
   left: 50%;
   background-color: $white;
-  padding: 94px 0 0 100px;
+  padding: 90px 0 0 100px;
 
   h2 {
     @include fontFamily-Josefin;
@@ -195,7 +206,6 @@ $very-dark-gray: hsl(0, 0%, 41%);
 }
 
 .creation-item {
-  display: flex;
   position: relative;
   overflow: hidden;
 
@@ -265,5 +275,253 @@ $very-dark-gray: hsl(0, 0%, 41%);
   }
   .footer-bottom {
     color: $dark-gray;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .header-links {
+    display: none;
+  }
+
+  .header__menu {
+    display: block;
+  }
+
+  .menu-container {
+    display: block;
+    top: 17%;
+    margin-right: 38px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    z-index: 3;
+
+    .hamburger {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        top: 8px;
+      }
+
+      &.open {
+        background-color: transparent;
+
+        &::before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+      }
+    }
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transform: translateX(120%);
+    transition: transform 0.3s ease-in-out;
+    ul {
+      list-style: none;
+      padding: 30px;
+      li {
+        margin-bottom: 25px;
+        @include fontFamily-Josefin;
+        text-transform: uppercase;
+      }
+    }
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    a {
+      color: white;
+      font-size: 24px;
+      text-decoration: none;
+      margin: 10px 0;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #aaa;
+      }
+    }
+  }
+  .Logo-hamburger {
+    position: absolute;
+    top: 55px;
+    left: 30px;
+    @include fontFamily-Alata();
+    font-size: 30px;
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 60vh;
+    width: 80%;
+    margin: auto;
+  }
+
+  .main-content {
+    border: 2px solid #ccc;
+    padding: 25px;
+    width: 100%;
+
+    h2 {
+      @include fontFamily-Josefin;
+      font-size: 40px;
+    }
+  }
+
+  .section-vr {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    padding: 50px 0;
+
+    &__image {
+      img {
+        position: relative;
+        width: 100%;
+        margin: 50px 0;
+      }
+    }
+  }
+
+  .section-vr__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    left: 0;
+    position: relative;
+
+    h2 {
+      @include fontFamily-Josefin;
+      font-size: 30px;
+      margin-bottom: 2rem;
+      color: $black;
+    }
+
+    p {
+      @include fontFamily-Josefin;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: $black;
+      max-width: 280px;
+    }
+  }
+
+  .our-creations {
+    margin-bottom: 100px;
+
+    .our-Title {
+      @include displayFlex-beetwen;
+      flex-direction: column;
+    }
+    h2 {
+      margin-top: 20px;
+    }
+
+    button {
+      display: none;
+    }
+
+    .creations-grid {
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      width: 100%;
+      color: $black;
+      height: 150vh;
+    }
+  }
+  .creation-title {
+    font-size: 20px;
+    left: 4%;
+  }
+
+  .footer {
+    height: auto;
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-and-socials,
+    .nav-and-bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .logo-and-socials {
+      .social-icons {
+        margin-top: 20px;
+      }
+    }
+
+    .nav-and-bottom {
+      order: 1;
+      .footer-nav {
+        margin-top: 20px;
+        order: 1;
+
+        ul {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+
+      .footer-bottom {
+        margin-top: 20px;
+        order: 3;
+      }
+    }
   }
 }
